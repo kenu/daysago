@@ -8,7 +8,7 @@ import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-public class DateLabel {
+public class DurationFromNow {
 	static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 	/**
 	 * 현재부터 "yyyyMMddHHmmss" 포맷의 날짜 차이 레이블
