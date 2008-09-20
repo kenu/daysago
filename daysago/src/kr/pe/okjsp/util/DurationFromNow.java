@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 public class DurationFromNow {
 	static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 	/**
-	 * ÇöÀçºÎÅÍ "yyyyMMddHHmmss" Æ÷¸ËÀÇ ³¯Â¥ Â÷ÀÌ ·¹ÀÌºí
+	 * í˜„ì¬ë¶€í„° "yyyyMMddHHmmss" í¬ë§·ì˜ ë‚ ì§œ ì°¨ì´ ë ˆì´ë¸”
 	 * @param date1
 	 * @return String
 	 */
@@ -24,7 +24,7 @@ public class DurationFromNow {
 	}
 
 	/**
-	 * ÇöÀçºÎÅÍ Date Æ÷¸ËÀÇ ³¯Â¥ Â÷ÀÌ ·¹ÀÌºí
+	 * í˜„ì¬ë¶€í„° Date í¬ë§·ì˜ ë‚ ì§œ ì°¨ì´ ë ˆì´ë¸”
 	 * @param d1
 	 * @return String
 	 */
@@ -33,7 +33,7 @@ public class DurationFromNow {
 	}
 
 	/**
-	 * "yyyyMMddHHmmss" Æ÷¸ËÀÇ ³¯Â¥ Â÷ÀÌ ·¹ÀÌºí
+	 * "yyyyMMddHHmmss" í¬ë§·ì˜ ë‚ ì§œ ì°¨ì´ ë ˆì´ë¸”
 	 * @param date1
 	 * @param date2
 	 * @return String
@@ -47,7 +47,7 @@ public class DurationFromNow {
 	}
 
 	/**
-	 * java.util.Date Æ÷¸ËÀÇ ³¯Â¥ Â÷ÀÌ ·¹ÀÌºí
+	 * java.util.Date í¬ë§·ì˜ ë‚ ì§œ ì°¨ì´ ë ˆì´ë¸”
 	 * @param d1
 	 * @param d2
 	 * @return
