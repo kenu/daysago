@@ -70,7 +70,7 @@ public class DurationFromNow {
 		c2.setTime(d2);
 
 		int day = c2.get(Calendar.DATE) - c1.get(Calendar.DATE);
-		if (day < 0) {
+		if (day <= 0) {
 			day = hour / 24;
 		}
 
