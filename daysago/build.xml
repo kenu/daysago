@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     2009. 3. 25. 오전 4:52:55                                                        
+
+     daysago project    
+     count time span
+                   
+     kenu                                                                
+     ====================================================================== -->
+<project name="daysago project" default="default">
+	<description>
+            count time span
+    </description>
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+	<target name="default" depends="clean" description="count time span">
+		<mkdir dir="build"/>
+		<javac srcdir="src"
+         destdir="build"
+         classpath="jarfile"
+         debug="on"
+		 encoding="utf-8"
+		/>
+		<copy todir="build">
+			<fileset dir="src" id="src">
+				<include name="**/*.properties" />
+				<exclude name="exclude"/>
+			</fileset>
+
+		</copy>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="clean">
+		<delete dir="build"></delete>
+	</target>
+
+</project>
