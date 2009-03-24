@@ -16,27 +16,36 @@
           target: default              
          ================================= -->
 	<target name="default" depends="clean" description="count time span">
-		<mkdir dir="build"/>
-		<javac srcdir="src"
-         destdir="build"
-         classpath="jarfile"
-         debug="on"
-		 encoding="utf-8"
-		/>
+		<mkdir dir="build" />
+		<javac srcdir="src" destdir="build" classpath="jarfile" debug="on" encoding="utf-8" />
 		<copy todir="build">
 			<fileset dir="src" id="src">
 				<include name="**/*.properties" />
-				<exclude name="exclude"/>
+				<exclude name="exclude" />
 			</fileset>
 
 		</copy>
 	</target>
 
 	<!-- - - - - - - - - - - - - - - - - - 
-          target: depends                      
+          target: clean                      
          - - - - - - - - - - - - - - - - - -->
 	<target name="clean">
-		<delete dir="build"></delete>
+		<delete dir="build">
+		</delete>
 	</target>
+
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: javadoc                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="javadoc" depends="default" description="Create Javadoc API documentation">
+		<mkdir dir="docs/api" />
+		<javadoc sourcepath="src" destdir="docs/api" encoding="utf-8"
+			splitindex="true">
+		</javadoc>
+	</target>
+
+
 
 </project>
