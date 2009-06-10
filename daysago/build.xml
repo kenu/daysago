@@ -1,57 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ====================================================================== 
-     2009. 3. 25. 오전 4:52:55                                                        
+     2009. 3. 25. 오후 2:33:55                                                        
 
-     daysago project    
-     count time span
+     daysago    
+     description
                    
      kenu                                                                
      ====================================================================== -->
-<project name="daysago project" default="default">
-	<description>
-            count time span
-    </description>
+<project name="daysago" default="compile">
+	<property name="build.dir" value="build"/>
 
-	<!-- ================================= 
-          target: default              
-         ================================= -->
-	<target name="default" depends="clean" description="count time span">
-		<mkdir dir="build" />
-		<javac srcdir="src" destdir="build" classpath="jarfile" debug="on" encoding="utf-8" />
-		<copy todir="build">
-			<fileset dir="src" id="src">
-				<include name="**/*.properties" />
-				<exclude name="exclude" />
+
+	<target name="compile" description="description">
+		<mkdir dir="${build.dir}"/>
+		<javac srcdir="src" destdir="${build.dir}" encoding="utf-8"
+			classpath="lib/jarfile" debug="on" />
+		<copy todir="${build.dir}">
+			<fileset dir="src">
+				<include name="**/*.properties"/>
 			</fileset>
-
 		</copy>
-	</target>
-
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: clean                      
-         - - - - - - - - - - - - - - - - - -->
-	<target name="clean">
-		<delete dir="build">
-		</delete>
-	</target>
-
-
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: javadoc                      
-         - - - - - - - - - - - - - - - - - -->
-	<target name="javadoc" depends="default" description="Create Javadoc API documentation">
-		<mkdir dir="docs/api" />
-		<javadoc sourcepath="src" destdir="docs/api" encoding="utf-8" splitindex="true">
-		</javadoc>
-	</target>
-
-	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" />
-	
-	<target name="findbugs">
-		<findbugs home="${findbugs.home}" output="xml:withMessages" outputFile="findbugs.xml">
-			<sourcePath path="src" />
-			<class location="build" />
-		</findbugs>
 	</target>
 
 </project>
