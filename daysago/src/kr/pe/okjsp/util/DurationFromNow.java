@@ -9,7 +9,6 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class DurationFromNow {
-	static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 	/**
 	 * 현재부터 "yyyyMMddHHmmss" 포맷의 날짜 차이 레이블
 	 * @param date1
@@ -17,6 +16,7 @@ public class DurationFromNow {
 	 */
 	public static String getTimeDiffLabel(String date1) {
 		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 			return getTimeDiffLabel(sdf.parse(date1), new Date());
 		} catch (ParseException e) {
 			return "-";
@@ -39,6 +39,7 @@ public class DurationFromNow {
 	 * @return String
 	 */
 	public static String getTimeDiffLabel(String date1, String date2) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		try {
 			return getTimeDiffLabel(sdf.parse(date1), sdf.parse(date2));
 		} catch (ParseException e) {
@@ -50,7 +51,7 @@ public class DurationFromNow {
 	 * java.util.Date 포맷의 날짜 차이 레이블
 	 * @param d1
 	 * @param d2
-	 * @return
+	 * @return String
 	 */
 	public static String getTimeDiffLabel(Date d1, Date d2) {
 		long diff = d2.getTime() - d1.getTime();
