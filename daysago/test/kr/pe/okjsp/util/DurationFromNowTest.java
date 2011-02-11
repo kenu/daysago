@@ -26,6 +26,13 @@ public class DurationFromNowTest extends TestCase {
 		String now = "20070824035303";
 		assertEquals("\uD55C\uB2EC\uC804", DurationFromNow.getTimeDiffLabel("20070723231503", now));
 	}
+	public void testSeconds() {
+		String now = "20070824035303";
+		assertEquals("5\uCD08\uC804", DurationFromNow.getTimeDiffLabel("20070824035258", now));
+		assertEquals("11\uCD08\uC804", DurationFromNow.getTimeDiffLabel("20070824035252", now));
+		assertEquals("10\uCD08\uC804", DurationFromNow.getTimeDiffLabel("20070824035253", now));
+
+	}
 	public void test0DayBug() {
 		DurationFromNow.setLocale(Locale.KOREAN);
 		String now = "20081011005203";//08-09-11 18:51 08-10-11 05:25
