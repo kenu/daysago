@@ -45,13 +45,4 @@
 		</javadoc>
 	</target>
 
-	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" />
-	
-	<target name="findbugs">
-		<findbugs home="${findbugs.home}" output="xml:withMessages" outputFile="findbugs.xml">
-			<sourcePath path="src" />
-			<class location="build" />
-		</findbugs>
-	</target>
-
 </project>
