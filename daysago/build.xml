@@ -45,4 +45,11 @@
 		</javadoc>
 	</target>
 
+	<target name="ssh">
+		  <sshexec host="14.63.xx.32"
+			username="dev"
+			password="okpass"
+			command="touch /tmp/iwashere"/>
+	</target>
+
 </project>
